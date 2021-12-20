@@ -1,31 +1,40 @@
-<!DOCTYPE html>
-<html lang="ja">
-  <head>
-    <title>position</title>
-    <style>
-* {margin: 0px; padding: 0px;}
-#top-left {
-  background: green;
+$color-blue: #82D7FF;
+$color-pink: #FF82A5;
+$color-green: #82FF90;
+$color-red: #FF9082;
+
+$color-top-left: rgba($color-blue, .7);
+$color-top-right: rgba($color-pink, .7);
+$color-bottom-right: rgba($color-green, .7);
+$color-bottom-left: rgba($color-red, .7);
+
+.top-left {
+  background: $color-top-left;
   border-top-left-radius: 100px;
 }
-#top-right {
-  background: red; 
+.top-right {
+  background: $color-top-right; 
   border-top-right-radius: 100px;
 }
-#bottom-right {
-  background: blue; 
+.bottom-right {
+  background: $color-bottom-right; 
   border-bottom-right-radius: 100px;
 }
-#bottom-left {
-  background: red; 
+.bottom-left {
+  background: $color-bottom-left; 
   border-bottom-left-radius: 100px;
 }
-      </style>
-  </head>
-  <body>
-      <div id="container">
-          <div id="boxA"></div>
-          <div id="boxB"></div>
-      </div>
-  </body>
-</html>
+
+.top-left, .top-right, .bottom-right, .bottom-left {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+}
+
+.top-right, .bottom-right {
+  left: -5px;
+}
+.bottom-right, .bottom-left {
+  top: -7px;
+}
